@@ -100,7 +100,7 @@ else if (command === 'update')  {
     let nameContains = employeeList[i].name;
    
     if (nameMatch === namePrompt) {
-      //update  object if name matches
+      //not finished
       
     }
     }
@@ -108,45 +108,29 @@ else if (command === 'update')  {
 }
 
 else if (command === 'add') {
-  
-render(employeeList);
-
-  /*
   const namePrompt = prompt('What is your name?');
   const officePrompt = prompt('What is your office number?');
   const phonePrompt = prompt('What is your phone number?');
-   */
+ 
+
+  let newEmployee = new Object();
+
+    newEmployee.name = namePrompt;
+    newEmployee.officeNum = officePrompt;
+    newEmployee.phoneNum = phonePrompt;
+    employeeList.push(newEmployee);
+ 
+   for (i = 0; i < employeeList.length; i++) {
+    render(employeeList[i].name);
+    render(employeeList[i].officeNum);
+    render(employeeList[i].phoneNum);
+  }
   
-  /*   Code works in console log but displays weird [object, Object]
-    everywhere else
-    
-    let newObject = [
-    {
-    name: namePrompt,
-    officeNum: officePrompt,
-    phoneNum: phonePrompt
-    }
-  ];
-
-  employeeList.push(newObject);
-  document.write(employeeList);
-*/
-
 
 }
 else if (command === 'delete') {
     
-  const namePrompt = prompt('What is your name?');
-  for (i = 0; i < employeeList.length; i++) {
-    let nameContains = employeeList[i].name;
-          
-    if (nameContains.includes(namePrompt)) {
-      let index = function () 
-      {return employeeList[i].findIndex(namePrompt); }
-      employeeList.splice(index, 1);
-    }
-    render(employeeList);
-    }
+//not finished
    
 }
 
