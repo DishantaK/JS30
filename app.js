@@ -95,15 +95,21 @@ else if (command === 'update')  {
   const namePrompt = prompt('What is your name?');
   const fieldPrompt = prompt('What is your field?');
   const valuePrompt = prompt('What is your value?');
-
+  
   for (i = 0; i < employeeList.length; i++) {
-    let nameContains = employeeList[i].name;
-   
+    let nameMatch = employeeList[i].name;
+          
     if (nameMatch === namePrompt) {
-      //not finished
-      
+     employeeList[i][fieldPrompt] = valuePrompt;
+
     }
-    }
+}
+
+for (i = 0; i < employeeList.length; i++) {
+  render(employeeList[i].name);
+  render(employeeList[i].officeNum);
+  render(employeeList[i].phoneNum);
+}
    
 }
 
@@ -129,8 +135,24 @@ else if (command === 'add') {
 
 }
 else if (command === 'delete') {
-    
-//not finished
-   
+const namePrompt = prompt('What is your name?');
+let findIndex = function() {
+  return employeeList.name === namePrompt;
+};
+let returnIndex = employeeList.findIndex(findIndex);
+employeeList.splice(returnIndex, 1);
+  
+
+for (i = 0; i < employeeList.length; i++) {
+  render(employeeList[i].name);
+  render(employeeList[i].officeNum);
+  render(employeeList[i].phoneNum);
+} 
 }
+
+else if (command === 'greet') {
+  const namePrompt = prompt('What is your name?');
+  let greeting = 'Why, hello there';
+  document.write(greeting + "  " + namePrompt + "!");
+} 
 
